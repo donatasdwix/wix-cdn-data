@@ -24,6 +24,12 @@ function wixCdnData(host) {
         return host+'/services/third-party/angular-translate/' + version + '/angular-translate.min.js';
       }
     },
+    'angular-bootstrap': {
+      versions: ['0.9.0'],
+      url: function (version) {
+        return host+'/services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js';
+      }
+    },
     underscore: {
       versions: ['1.5.2'],
       url: function (version) {
