@@ -1,7 +1,7 @@
 function wixCdnData(host) {
   var data = {
     jquery: {
-      versions: ['2.0.3', '1.9.0', '1.8.3'],
+      versions: ['2.1.0', '2.0.3', '1.9.0', '1.8.3'],
       url: function (version) {
         return host+'/services/third-party/jquery/' + version + '/jquery.min.js';
       }
@@ -13,7 +13,7 @@ function wixCdnData(host) {
       }
     },
     'es5-shim': {
-      versions: ['2.1.0'],
+      versions: ['2.3.0', '2.1.0'],
       url: function (version) {
         return host+'/services/third-party/es5-shim/' + version + '/es5-shim.min.js';
       }
@@ -25,7 +25,7 @@ function wixCdnData(host) {
       }
     },
     'angular-bootstrap': {
-      versions: ['0.9.0', '0.10.0'],
+      versions: ['0.10.0', '0.9.0'],
       url: function (version) {
         return host+'/services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js';
       }
@@ -58,7 +58,7 @@ function wixCdnData(host) {
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
