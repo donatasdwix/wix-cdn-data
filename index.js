@@ -25,7 +25,7 @@ function wixCdnData(host) {
       }
     },
     'angular-bootstrap': {
-      versions: ['0.9.0'],
+      versions: ['0.9.0', '0.10.0'],
       url: function (version) {
         return host+'/services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js';
       }
