@@ -1,45 +1,47 @@
+'use strict';
+
 function wixCdnData(host) {
   var data = {
     jquery: {
       versions: ['2.1.0', '2.0.3', '1.9.0', '1.8.3'],
       url: function (version) {
-        return host+'/services/third-party/jquery/' + version + '/jquery.min.js';
+        return host + '/services/third-party/jquery/' + version + '/jquery.min.js';
       }
     },
     'jquery-ui': {
       versions: ['1.8.24'],
       url: function (version) {
-        return host+'/services/third-party/jqueryui/' + version + '/jquery-ui.min.js';
+        return host + '/services/third-party/jqueryui/' + version + '/jquery-ui.min.js';
       }
     },
     'es5-shim': {
       versions: ['2.3.0', '2.1.0'],
       url: function (version) {
-        return host+'/services/third-party/es5-shim/' + version + '/es5-shim.min.js';
+        return host + '/services/third-party/es5-shim/' + version + '/es5-shim.min.js';
       }
     },
     'angular-translate': {
       versions: ['1.1.1', '1.1.0', '2.0.1'],
       url: function (version) {
-        return host+'/services/third-party/angular-translate/' + version + '/angular-translate.min.js';
+        return host + '/services/third-party/angular-translate/' + version + '/angular-translate.min.js';
       }
     },
     'angular-bootstrap': {
       versions: ['0.10.0', '0.9.0'],
       url: function (version) {
-        return host+'/services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js';
+        return host + '/services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js';
       }
     },
     underscore: {
       versions: ['1.5.2', '1.6.0'],
       url: function (version) {
-        return host+'/services/third-party/underscore/' + version + '/underscore-min.js';
+        return host + '/services/third-party/underscore/' + version + '/underscore-min.js';
       }
     },
     swfobject: {
       versions: ['2.2'],
       url: function (version) {
-        return host+'/services/third-party/swfobject/' + version + '/swfobject.js';
+        return host + '/services/third-party/swfobject/' + version + '/swfobject.js';
       }
     }
   };
@@ -58,13 +60,13 @@ function wixCdnData(host) {
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10','1.2.14'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
-          return host+'/services/third-party/angularjs/' + version + '/i18n';
+          return host + '/services/third-party/angularjs/' + version + '/i18n';
         } else {
-          return host+'/services/third-party/angularjs/' + version + '/' + item + '.min.js';
+          return host + '/services/third-party/angularjs/' + version + '/' + item + '.min.js';
         }
       }
     };
