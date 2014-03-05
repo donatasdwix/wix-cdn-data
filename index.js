@@ -19,7 +19,7 @@ function wixCdnData(host) {
       }
     },
     'angular-translate': {
-      versions: ['1.1.1', '1.1.0'],
+      versions: ['1.1.1', '1.1.0', '2.0.1'],
       url: function (version) {
         return host+'/services/third-party/angular-translate/' + version + '/angular-translate.min.js';
       }
@@ -31,7 +31,7 @@ function wixCdnData(host) {
       }
     },
     underscore: {
-      versions: ['1.5.2'],
+      versions: ['1.5.2', '1.6.0'],
       url: function (version) {
         return host+'/services/third-party/underscore/' + version + '/underscore-min.js';
       }
