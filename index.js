@@ -82,6 +82,6 @@ function wixCdnData(host) {
 }
 
 module.exports = {
-  http: wixCdnData.bind(undefined, 'http://static.wix.com'),
+  http: wixCdnData.bind(undefined, 'http://static.parastorage.com'),
   https: wixCdnData.bind(undefined, 'https://sslstatic.wix.com')
 };
