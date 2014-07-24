@@ -15,7 +15,7 @@ function wixCdnData(host) {
       }
     },
     'es5-shim': {
-      versions: ['2.1.0', '2.3.0', '3.0.2', '3.4.0'],
+      versions: ['2.1.0', '2.3.0', '3.0.2', '3.4.0', '4.0.1'],
       url: function (version) {
         return host + '/services/third-party/es5-shim/' + version + '/es5-shim.min.js';
       }
@@ -66,7 +66,7 @@ function wixCdnData(host) {
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
