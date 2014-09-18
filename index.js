@@ -16,13 +16,13 @@ function wixCdnData(host, fn) {
       }
     },
     'es5-shim': {
-      versions: ['2.1.0', '2.3.0', '3.0.2', '3.4.0', '4.0.1'],
+      versions: ['2.1.0', '2.3.0', '3.0.2', '3.4.0', '4.0.1', '4.0.3'],
       url: function (version) {
         return fn(host + 'services/third-party/es5-shim/' + version + '/es5-shim.min.js');
       }
     },
     'angular-translate': {
-      versions: ['1.1.1', '1.1.0', '2.0.1', '2.1.0', '2.2.0'],
+      versions: ['1.1.1', '1.1.0', '2.0.1', '2.1.0', '2.2.0', '2.3.0'],
       url: function (version) {
         return fn(host + 'services/third-party/angular-translate/' + version + '/angular-translate.min.js');
       }
@@ -34,7 +34,7 @@ function wixCdnData(host, fn) {
       }
     },
     underscore: {
-      versions: ['1.5.2', '1.6.0'],
+      versions: ['1.5.2', '1.6.0', '1.7.0'],
       url: function (version) {
         return fn(host + 'services/third-party/underscore/' + version + '/underscore-min.js');
       }
@@ -46,7 +46,7 @@ function wixCdnData(host, fn) {
       }
     },
     requirejs: {
-      versions: ['2.1.14'],
+      versions: ['2.1.14', '2.1.15'],
       url: function (version) {
         return fn(host + 'services/third-party/requirejs/' + version + '/require.min.js');
       }
@@ -73,7 +73,7 @@ function wixCdnData(host, fn) {
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21', '1.2.25'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
