@@ -1,6 +1,6 @@
 {
   "name": "wix-cdn-data",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "wix-cdn-data",
   "main": "index.js",
   "scripts": {
