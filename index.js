@@ -56,6 +56,12 @@ function wixCdnData(host, fn) {
       url: function (version) {
         return fn(host + 'services/third-party/swfobject/' + version + '/swfobject.js');
       }
+    },
+    gsap: {
+      versions: ['1.13.1'],
+      url: function (version) {
+        return fn(host + 'services/third-party/tweenmax/' + version + '/minified/TweenMax.min.js')
+      }
     }
   };
 
