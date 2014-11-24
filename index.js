@@ -22,13 +22,13 @@ function wixCdnData(host, fn) {
       }
     },
     'angular-translate': {
-      versions: ['1.1.1', '1.1.0', '2.0.1', '2.1.0', '2.2.0', '2.3.0', '2.4.1'],
+      versions: ['1.1.1', '1.1.0', '2.0.1', '2.1.0', '2.2.0', '2.3.0', '2.4.1', '2.4.2'],
       url: function (version) {
         return fn(host + 'services/third-party/angular-translate/' + version + '/angular-translate.min.js');
       }
     },
     'angular-bootstrap': {
-      versions: ['0.10.0', '0.9.0', '0.11.0', '0.11.2'],
+      versions: ['0.10.0', '0.9.0', '0.11.0', '0.11.2', '0.12.0'],
       url: function (version) {
         return fn(host + 'services/third-party/angular-bootstrap/' + version + '/ui-bootstrap-tpls.min.js');
       }
@@ -74,12 +74,13 @@ function wixCdnData(host, fn) {
     'angular-touch',
     'angular-loader',
     'angular-resource',
-    'angular-cookies'
+    'angular-cookies',
+    'angular-messages'
   ];
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21', '1.2.25', '1.3.0'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21', '1.2.25', '1.2.27', '1.3.0', '1.3.3'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
