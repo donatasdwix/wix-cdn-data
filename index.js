@@ -95,10 +95,13 @@ function wixCdnData(host, fn) {
   return data;
 }
 
+var data = wixCdnData.bind(undefined, '//static.parastorage.com/', function (str) {
+  return str.replace(/\.min\.js$/, '#if(!${debug}).min#{end}.js');
+});
+
+
 module.exports = {
-  http: wixCdnData.bind(undefined, 'http://static.parastorage.com/'),
-  https: wixCdnData.bind(undefined, 'https://sslstatic.wix.com/'),
-  vm: wixCdnData.bind(undefined, '${staticBaseUrl}', function (str) {
-    return str.replace(/\.min\.js$/, '#if(!${debug}).min#{end}.js');
-  })
+  http: data,
+  https: data,
+  vm: data
 };
