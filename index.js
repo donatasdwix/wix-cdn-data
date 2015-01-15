@@ -1,4 +1,4 @@
-'use strict';
+/* global module */
 
 function wixCdnData(host, fn) {
   fn = fn || function (str) { return str; };
@@ -60,7 +60,7 @@ function wixCdnData(host, fn) {
     gsap: {
       versions: ['1.13.1'],
       url: function (version) {
-        return fn(host + 'services/third-party/tweenmax/' + version + '/minified/TweenMax.min.js')
+        return fn(host + 'services/third-party/tweenmax/' + version + '/minified/TweenMax.min.js');
       }
     }
   };
@@ -95,13 +95,14 @@ function wixCdnData(host, fn) {
   return data;
 }
 
-var data = wixCdnData.bind(undefined, '//static.parastorage.com/', function (str) {
-  return str.replace(/\.min\.js$/, '#if(!${debug}).min#{end}.js');
-});
-
+var data = function (domain) {
+  return wixCdnData.bind(undefined, domain || '//static.parastorage.com/', function (str) {
+    return str.replace(/\.min\.js$/, '#if(!${debug}).min#{end}.js');
+  });
+};
 
 module.exports = {
-  http: data,
-  https: data,
-  vm: data
+  http: data('http://static.parastorage.com/'),
+  https: data('https://sslstatic.wix.com/'),
+  vm: data('${staticBaseUrl}')
 };
