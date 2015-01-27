@@ -40,7 +40,7 @@ function wixCdnData(host, fn) {
       }
     },
     lodash: {
-      versions: ['2.4.1'],
+      versions: ['2.4.1', '3.0.0'],
       url: function (version) {
         return fn(host + 'services/third-party/lodash/' + version + '/dist/lodash.min.js');
       }
@@ -80,7 +80,7 @@ function wixCdnData(host, fn) {
 
   angularFiles.forEach(function (item) {
     data[item] = {
-      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21', '1.2.25', '1.2.27', '1.3.0', '1.3.3', '1.3.4', '1.3.8'],
+      versions: ['1.0.8', '1.1.4', '1.1.5', '1.2.1', '1.2.6', '1.2.10', '1.2.14', '1.2.16', '1.2.18', '1.2.19', '1.2.20', '1.2.21', '1.2.25', '1.2.27', '1.2.28', '1.3.0', '1.3.3', '1.3.4', '1.3.8', '1.3.11'],
       recursive: (item === 'angular-i18n'),
       url: function (version) {
         if (item === 'angular-i18n') {
