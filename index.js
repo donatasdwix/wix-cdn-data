@@ -3,10 +3,20 @@
 function wixCdnData(host, fn) {
   fn = fn || function (str) { return str; };
   var data = {
+    react: {
+      versions: ['0.12.2'],
+      url: function (version) {
+        return fn(host + 'services/third-party/react/' + version + '/react.min.js');
+      }
+    },
     jquery: {
       versions: ['1.8.3', '1.9.0', '2.0.3', '2.1.0', '2.1.1', '2.1.3'],
       url: function (version) {
-        return fn(host + 'services/third-party/jquery/' + version + '/jquery.min.js');
+        if (version.split('.').join('') >= 210) {
+          return fn(host + 'services/third-party/jquery/' + version + '/dist/jquery.min.js');
+        } else {
+          return fn(host + 'services/third-party/jquery/' + version + '/jquery.min.js');
+        }
       }
     },
     'jquery-ui': {
