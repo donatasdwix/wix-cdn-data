@@ -3,6 +3,12 @@
 function wixCdnData(host, fn) {
   fn = fn || function (str) { return str; };
   var data = {
+    'js-sdk': {
+      versions: ['1.41.0'],
+      url: function (version) {
+        return fn(host + 'services/js-sdk/' + version + '/js/wix.min.js');
+      }
+    },
     react: {
       versions: ['0.12.2'],
       url: function (version) {
