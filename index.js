@@ -64,7 +64,11 @@ function wixCdnData(host, fn) {
     lodash: {
       versions: ['2.4.1', '3.0.0', '3.1.0', '3.5.0'],
       url: function (version) {
-        return fn(host + 'services/third-party/lodash/' + version + '/dist/lodash.min.js');
+        if (version.split('.').join('') >= 300) {
+          return fn(host + 'services/third-party/lodash/' + version + '/lodash.min.js');
+        } else {
+          return fn(host + 'services/third-party/lodash/' + version + '/dist/lodash.min.js');
+        }
       }
     },
     requirejs: {
