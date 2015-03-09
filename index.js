@@ -15,6 +15,12 @@ function wixCdnData(host, fn) {
         return fn(host + 'services/third-party/react/' + version + '/react.min.js');
       }
     },
+    immutable: {
+      versions: ['3.6.4'],
+      url: function (version) {
+        return fn(host + 'services/third-party/immutable/' + version + '/dist/immutable.min.js');
+      }
+    },
     jquery: {
       versions: ['1.8.3', '1.9.0', '2.0.3', '2.1.0', '2.1.1', '2.1.3'],
       url: function (version) {
